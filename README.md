@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ClientFlow
 
-## Getting Started
+A smart client enquiry and project management platform for digital agencies.
 
-First, run the development server:
+> ClientFlow is a centralized digital agency management platform that connects client requirements with suitable team members and tracks projects from enquiry to completion.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Problem
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Agencies receive enquiries through websites, email and chat. Information gets scattered, project assignment is manual (ignoring skills, availability, workload and experience), and nobody has clear visibility from first enquiry to delivery.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Objectives
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Client enquiry management**: collect and validate requirements, features, budget, timeline.
+2. **Centralized dashboard**: manage clients, enquiries, projects and tasks in one place.
+3. **Intelligent employee matching**: recommend people by skills, availability, workload and experience.
+4. **Project lifecycle tracking**: enquiry -> assigned -> in progress -> completed.
+5. **Security and reliability**: authentication, authorization, validation, error handling.
+6. **Analytics**: enquiries, statuses, assignments, conversions.
 
-## Learn More
+## Tech stack
 
-To learn more about Next.js, take a look at the following resources:
+| Layer | Technology | Why |
+|---|---|---|
+| Web fundamentals | HTML5, CSS3, JavaScript | Everything else compiles down to these |
+| UI library | React | Reusable components, state-driven UI |
+| Framework | Next.js (App Router) | Routing, server/client rendering, API in one codebase |
+| Language | TypeScript | Type safety, fewer runtime bugs |
+| Styling | Tailwind CSS | Utility-first, responsive, consistent |
+| Backend | Next.js Route Handlers | REST-style API endpoints |
+| Database | PostgreSQL | Relational data: clients, projects, employees, skills |
+| ORM | Prisma | Schema, migrations, type-safe queries |
+| Auth | Session-based (httpOnly cookie) + password hashing | Protected dashboard |
+| Validation | Zod (+ React Hook Form) | One schema for client and server validation |
+| Charts | Recharts | Analytics dashboard |
+| Tooling | ESLint, Prettier, Docker (local Postgres) | Quality and reproducible setup |
+| Testing | Vitest, React Testing Library, Playwright | Unit, component, end-to-end |
+| Version control | Git + GitHub | History, collaboration |
+| Deployment | Vercel + managed PostgreSQL (Neon / Supabase) | Hosting |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How this repo is used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `docs/` : architecture, folder structure, roadmap.
+- `notes/` : interview-ready notes, one file per phase. **Write them as you learn.**
+- `src/`, `prisma/`, `tests/` : the actual app (created phase by phase).
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Start with `docs/02-learning-roadmap.md`.
